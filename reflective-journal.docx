@@ -1,0 +1,61 @@
+# Reflective Journal: Interactive 3D Website Development
+
+## Introduction
+This journal reflects on my experience converting a standalone JavaScript 3D interactive application into a Next.js website. The original code used Three.js for 3D graphics and Tone.js for sound, creating an experience where users could click on shapes to change their appearance and hear musical chords.
+
+## Design Decisions
+
+### Why Next.js?
+I chose Next.js because it provides an easy way to create multiple pages while keeping the code organized. The App Router made it simple to set up the home page with the 3D experience and add an about page to explain the project.
+
+### Component Structure
+I separated the 3D scene into its own component to keep the code clean. This made it easier to:
+- Focus on one thing at a time
+- Load the 3D code only when needed
+- Prevent errors that happen when mixing server and client code
+
+### Visual Design
+For the design, I kept things simple with:
+- A gradient background that complements the colorful shapes
+- A semi-transparent navigation bar that doesn't get in the way
+- Clear instructions for users to know what to do
+- Information organized in cards on the about page
+
+## Challenges and Solutions
+
+### Audio Playback
+Web browsers don't allow sound to play until the user interacts with the page. I solved this by:
+- Starting the audio system only after the first click
+- Adding a message telling users to click on the shape
+
+### Memory Management
+3D graphics and audio can cause memory leaks if not handled properly. I made sure to:
+- Clean up all Three.js objects when leaving the page
+- Stop all sound processes when not needed
+- Remove event listeners to prevent duplicate handlers
+
+### Making It Responsive
+The original code was designed for a full browser window. I adjusted it to:
+- Work on different screen sizes
+- Play well with the navigation bar
+- Maintain the immersive experience
+
+## What I Learned
+
+This project taught me several important lessons:
+- How to integrate complex JavaScript libraries into React
+- The importance of proper cleanup for performance
+- Ways to handle browser restrictions on audio
+- How to balance visual appeal with usability
+
+## Future Improvements
+
+If I were to continue developing this project, I would:
+- Add more shape options
+- Create visual effects that react to the music
+- Allow users to customize colors and sounds
+- Add touch support for mobile devices
+
+## Conclusion
+
+Converting this interactive 3D experience into a proper website required careful planning and problem-solving. By breaking down the challenges and addressing them one by one, I was able to create a more accessible and structured experience while maintaining the creative and interactive elements of the original code.
